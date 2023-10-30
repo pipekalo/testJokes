@@ -23,7 +23,7 @@ public class Controller {
 
     @GetMapping(value = "/jokes/{count}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public ResponseEntity<Flux<String>> getJoke(@PathVariable int count) {
-        if (count > 500) {
+        if (count > 100) {
             throw new ExceptionCount();
         }
         List<Flux<String>> result = new ArrayList<>();
